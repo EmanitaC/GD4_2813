@@ -46,6 +46,15 @@
         $tiketMasihAda = $daftarKonser[0]["harga"] > 0;
     ?>
 
+    <?php
+        $jumlahTiket = "2";
+        $totalHarga = $jumlahTiket + $jumlahTiket + $jumlahTiket;
+        echo $totalHarga;
+
+        $kodePromo = "2" . "2" . "2";
+        echo $kodePromo;
+    ?>
+
     <p>Konser: <?php echo $namaKonser; ?></p>
     <p>Harga: <?php echo $hargaTiket;?></p>
     <p>Sisa Tiket: <?php echo $sisaTiket; ?></p>
