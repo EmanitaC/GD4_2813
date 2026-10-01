@@ -16,19 +16,19 @@
             [
                 "nama" => "Coldplay - Music of the Spheres",
                 "tanggal" => "2026-03-15",
-                "kategoriTiket" => "Festival",
+                "kategori" => "Festival",
                 "harga" => 1500000
             ],
             [
                 "nama" => "Dewa 19 Reunion Show",
                 "tanggal" => "2026-04-02",
-                "kategoriTiket" => "VIP",
+                "kategori" => "VIP",
                 "harga" => 25000000
             ],
             [
                 "nama" => "NCT Dream World Tour",
                 "tanggal" => "2026-05-20",
-                "kategoriTiket" => "Reguler",
+                "kategori" => "Reguler",
                 "harga" => 9000000
             ],
         ];
@@ -54,6 +54,27 @@
         $kodePromo = "2" . "2" . "2";
         echo $kodePromo;
     ?>
+
+    <?php
+        $sisaTiket = $daftarKonser[0]["harga"] > 0 ? 15 : 0; 
+        if ($sisaTiket > 10) {
+            $statusTiket = "Masih Banyak";
+        } elseif ($sisaTiket > 0) {
+            $statusTiket = "Sisa Dikit, Buruan!";
+        } else {
+            $statusTiket = "Sold Out";
+        }
+        $kategori = $daftarKonser[0]["kategori"];
+        switch ($kategori) {
+            case "Festival": $badge = "Festival Pass"; break;
+            case "VIP": $badge = "VIP Access"; break;
+            case "Reguler": $badge = "Reguler"; break;
+            default: $badge = "Kategori tidak dikenali";
+        }    
+    ?>
+    
+    <p>Status: <?php echo $statusTiket; ?></p>
+    <p>Kategori: <?php echo $badge; ?></p>
 
     <p>Konser: <?php echo $namaKonser; ?></p>
     <p>Harga: <?php echo $hargaTiket;?></p>
