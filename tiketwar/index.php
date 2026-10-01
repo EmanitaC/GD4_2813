@@ -34,6 +34,11 @@
         ];
     ?>
 
+    <?php
+        $tiket = ["nama" => "VIP", "harga" => 500000];
+        echo $tiket["harga"];
+    ?>
+
     <p>Konser: <?php echo $namaKonser; ?></p>
     <p>Harga: <?php echo $hargaTiket;?></p>
     <p>Sisa Tiket: <?php echo $sisaTiket; ?></p>
