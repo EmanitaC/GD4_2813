@@ -102,6 +102,7 @@
     <p>Tanggal: <?php //echo $daftarKonser[0]["tanggal"]; ?></p> -->
 
     <h2>Daftar Konser War Tiket Minggu Ini</h2>
+
     <?php foreach ($daftarKonser as $konser) { ?>
         <div style="border: 1px solid #ccc; padding: 12px; margin-bottom: 8px;">
             <h3><?php echo $konser["nama"]; ?></h3>
@@ -111,6 +112,14 @@
         </div>
     <?php } ?>
 
+    <?php
+        $sisaTiket = 5;
+        while ($sisaTiket > 0) {
+            echo "Tiket tersisa: $sisaTiket <br>";
+            $sisaTiket--;
+        }
+    ?>
+    
     <p>Harga asli: Rp<?php echo $hargaAsli; ?></p>
     <p>Setelah diskon <?php echo $persenDiskon; ?>%: Rp<?php echo $hargaSetelahDiskon; ?></p>
 </body>
