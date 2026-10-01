@@ -11,10 +11,12 @@
         $hargaTiket = 1500000;
         $sisaTiket = 25;
         $sudahSoldOut = false;
+        $kategoriTiket = "Festival";
     ?>
 
     <p>Konser: <?php echo $namaKonser; ?></p>
     <p>Harga: <?php echo $hargaTiket;?></p>
     <p>Sisa Tiket: <?php echo $sisaTiket; ?></p>
+    <p>Kategori tiket: <?php echo $kategoriTiket?></p>
 </body>
 </html>
