@@ -83,7 +83,7 @@
             case "VIP":
                 echo "VIP Access";
             break;
-            
+
             case "Reguler":
                 echo "Reguler";
             break;
@@ -98,8 +98,18 @@
     <p>Harga: <?php echo $hargaTiket;?></p>
     <p>Sisa Tiket: <?php echo $sisaTiket; ?></p>
 
-    <p>Konser terdekat: <?php echo $daftarKonser[0]["nama"]; ?></p>
-    <p>Tanggal: <?php echo $daftarKonser[0]["tanggal"]; ?></p>
+    <!-- <p>Konser terdekat: <?php //echo $daftarKonser[0]["nama"]; ?></p>
+    <p>Tanggal: <?php //echo $daftarKonser[0]["tanggal"]; ?></p> -->
+
+    <h2>Daftar Konser War Tiket Minggu Ini</h2>
+    <?php foreach ($daftarKonser as $konser) { ?>
+        <div style="border: 1px solid #ccc; padding: 12px; margin-bottom: 8px;">
+            <h3><?php echo $konser["nama"]; ?></h3>
+            <p>Tanggal: <?php echo $konser["tanggal"]; ?></p>
+            <p>Kategori: <?php echo $konser["kategori"]; ?></p>
+            <p>Harga: Rp<?php echo number_format($konser["harga"], 0, ",", "."); ?></p>
+        </div>
+    <?php } ?>
 
     <p>Harga asli: Rp<?php echo $hargaAsli; ?></p>
     <p>Setelah diskon <?php echo $persenDiskon; ?>%: Rp<?php echo $hargaSetelahDiskon; ?></p>
