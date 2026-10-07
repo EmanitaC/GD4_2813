@@ -1,0 +1,23 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["admin"])) {
+    header("Location: login.php");
+    exit;
+}
+
+$folderTujuan = "bukti_bayar/";
+$namaFile = basename($_FILES["bukti"]["name"]);
+$alamatFile = $folderTujuan . $namaFile;
+
+if (move_uploaded_file($_FILES["bukti"]["tmp_name"], $alamatFile)) {
+    $_SESSION["daftarWar"][] = [
+        "nama"     => $_POST["nama"],
+        "kategori" => $_POST["kategori"],
+        "harga"    => $_POST["harga"],
+        "bukti"    => $alamatFile
+    ];
+}
+
+header("Location: dashboard.php");
+exit;
